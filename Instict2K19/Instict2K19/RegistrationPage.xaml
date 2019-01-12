@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:Converters="clr-namespace:Instict2K19.Converters;assembly=Instict2K19"
+             x:Class="Instict2K19.RegistrationPage"
+             Title="Registration Desk">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Command="{Binding ResetCommand}"
+                     Order="Primary"
+                     Icon="ic_Cross.png"/>
+        <ToolbarItem Command="{Binding SaveCommand}"
+                     Order="Primary"
+                     Icon="ic_Correct.png"/>
+        <ToolbarItem Command="{Binding ExportDatabaseCommand}"
+                     Order="Secondary"
+                     Text="Export Databse"/>
+        <ToolbarItem Command="{Binding TotalCollectionCommand}"
+                     Order="Secondary"
+                     Text="Total Collection"/>
+        <ToolbarItem Command="{Binding SupportCommand}"
+                     Order="Secondary"
+                     Text="Help And Support"/>
+        
+        
+        </ContentPage.ToolbarItems>
+    <ScrollView VerticalOptions="FillAndExpand"
+                HorizontalOptions="FillAndExpand"
+                Padding="10">
+        <StackLayout HorizontalOptions="FillAndExpand"
+                     VerticalOptions="FillAndExpand"
+                     Spacing="10">
+            <Label  Text="{Binding ReceiptNo,StringFormat='Receipt No.: {0}'}"
+                    FontSize="Medium"
+                    FontAttributes="Bold"
+                    HorizontalOptions="FillAndExpand"/>
+                
+            <Grid HorizontalOptions="FillAndExpand"
+                  ColumnSpacing="20">
+                <Label  Grid.ColumnSpan="2"
+                    Text="College Details"
+                    FontSize="Large"
+                    FontAttributes="Bold"
+                    HorizontalOptions="FillAndExpand"/>
+                <StackLayout Grid.Row="1"
+                             HorizontalOptions="FillAndExpand"
+                             Orientation="Horizontal">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer NumberOfTapsRequired="1"
+                                              Command="{Binding CollgeTypeChangedCommand}"
+                                              CommandParameter="IU"/>
+                    </StackLayout.GestureRecognizers>
+                    <Image >
+                        <Image.Source>
+                                <Binding Path="IsOtherCollege">
+                                    <Binding.Converter>
+                                        <Converters:BoolToObjectConverter x:TypeArguments="ImageSource"
+                                                             TrueObject="ic_UnChecked.png"
+                                                             FalseObject="ic_Checked.png" />
+                                    </Binding.Converter>
+                                </Binding>
+                            </Image.Source>
+                    </Image>
+                    <Label Text="Indus University"
+                           VerticalOptions="CenterAndExpand"/>
+                </StackLayout>
+                <StackLayout Grid.Row="1"
+                             Grid.Column="1"
+                                HorizontalOptions="FillAndExpand"
+                             Orientation="Horizontal">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer NumberOfTapsRequired="1"
+                                              Command="{Binding CollgeTypeChangedCommand}"
+                                              CommandParameter="NONIU"/>
+                    </StackLayout.GestureRecognizers>
+                    <Image >
+                        <Image.Source>
+                                <Binding Path="IsOtherCollege">
+                                    <Binding.Converter>
+                                        <Converters:BoolToObjectConverter x:TypeArguments="ImageSource"
+                                                             TrueObject="ic_Checked.png"
+                                                             FalseObject="ic_UnChecked.png" />
+                                    </Binding.Converter>
+                                </Binding>
+                            </Image.Source>
+                    </Image>
+                    <Label Text="Other"
+                           VerticalOptions="CenterAndExpand"/>
+                </StackLayout>
+                
+            </Grid>
+            
+            <Picker 
+                    ItemsSource="{Binding OtherColleges}"
+                    SelectedItem="{Binding SelectedCollege}"
+                    HorizontalOptions="FillAndExpand"
+                    Title="Select College"
+                    IsVisible="{Binding IsOtherCollege}"/>
+            
+            <Grid HorizontalOptions="FillAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Label  Grid.ColumnSpan="2"
+                    Text="Contact Details"
+                    FontSize="Large"
+                    FontAttributes="Bold"
+                    HorizontalOptions="FillAndExpand"/>
+                <Image Grid.Row="1"
+                    Source="ic_Call.png"/>
+               <Entry Grid.Row="1" Grid.Column="1"
+                        Keyboard="Telephone"
+                      HorizontalOptions="FillAndExpand"
+                      Placeholder="Contact Number"
+                      Text="{Binding PrimaryContactNumber}"/>
+                <Image Grid.Row="2"
+                    Source="ic_Call.png"/>
+               <Entry Grid.Row="2" Grid.Column="1" 
+                      Keyboard="Telephone"
+                      HorizontalOptions="FillAndExpand"
+                      Placeholder="Alternate Contact Number"
+                      Text="{Binding SecondaryContactNumber}"/>
+                <Image Grid.Row="3"
+                    Source="ic_Email.png"/>
+               <Entry Grid.Row="3" Grid.Column="1" 
+                      Keyboard="Email"
+                      HorizontalOptions="FillAndExpand"
+                      Placeholder="Email"
+                      Text="{Binding EmailAddress}"/>
+            </Grid>
+            
+        </StackLayout>
+    </ScrollView>
+    <ContentPage.Content>
+    </ContentPage.Content>
+</ContentPage>

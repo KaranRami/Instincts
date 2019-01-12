@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="Instict2K19.NameAndGroupPage"
+             xmlns:common="clr-namespace:Instict2K19"
+             Title="Home"
+             Padding="10">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Command="{Binding SupportCommand}" 
+                     Icon="ic_Support.png"/>
+        </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand"
+              VerticalOptions="CenterAndExpand"
+              ColumnSpacing="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+            <Label  Grid.Row="0"
+                    Grid.Column="0"
+                    VerticalOptions="FillAndExpand"
+                    VerticalTextAlignment="Center"
+                    Text="Group: "/>
+            <Entry  Grid.Row="0"
+                    Grid.Column="1"
+                    Placeholder="Group name"
+                    Text="{Binding GroupName}"
+                    HorizontalOptions="FillAndExpand"/>
+            
+            <Label  Grid.Row="1"
+                    Grid.Column="0"
+                    VerticalOptions="FillAndExpand"
+                    VerticalTextAlignment="Center"
+                    Text="Username: "/>
+            <Entry  Grid.Row="1"
+                    Grid.Column="1"
+                    Placeholder="Username"
+                    Text="{Binding UserName}"
+                    HorizontalOptions="FillAndExpand"/>
+            <Button Grid.Row="2"
+                    Grid.ColumnSpan="2"
+                    Text="Save"
+                    Command="{Binding SaveCommand}"/>
+            <Label  Grid.Row="3"
+                    Grid.ColumnSpan="2"
+                    Text="All fields are mandatory."
+                    TextColor="Red"
+                    HorizontalOptions="FillAndExpand"
+                    HorizontalTextAlignment="Center"
+                    IsVisible="{Binding IsError}"/>
+            </Grid>
+    </ContentPage.Content>
+</ContentPage>
