@@ -1,0 +1,342 @@
+{
+  "Categories": [
+    {
+      "SubGategories": [
+        {
+          "Name": "AAKAR",
+          "Events": [
+            {
+              "Name": "Ad Mad",
+              "Fees": 150,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "Master Chef",
+              "Fees": 100,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "Photogaphy",
+              "Fees": 50,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "Poster Making",
+              "Fees": 30,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "Rangoli",
+              "Fees": 60,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "Vines",
+              "Fees": 30,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            }
+          ]
+        },
+        {
+          "Name": "GAME UP",
+          "Events": [
+            {
+              "Name": "CS GO",
+              "Fees": 150,
+              "TeamMemberCount": 4,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "Fifa 15",
+              "Fees": 50,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "NFS Most Wanted",
+              "Fees": 50,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "PUBG",
+              "Fees": 150,
+              "TeamMemberCount": 4,
+              "IsChargePerPerson": false
+            }
+          ]
+        },
+        {
+          "Name": "RHAPSODY",
+          "Events": [
+            {
+              "Name": "21st Century Flyods (Band)",
+              "Fees": 500,
+              "TeamMemberCount": null,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "Fashion Fiesta",
+              "Fees": 100,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "Break Free (Dance group of 5-12)",
+              "Fees": 100,
+              "TeamMemberCount": null,
+              "IsChargePerPerson": true
+            },
+            {
+              "Name": "Chimes N&#39; Rhymes (Singing Duet)",
+              "Fees": 200,
+              "TeamMemberCount": 2,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "Chimes N&#39; Rhymes (Singing Solo)",
+              "Fees": 100,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "Groove It (Dance Solo)",
+              "Fees": 100,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "Just Duet (Dance Duet)",
+              "Fees": 200,
+              "TeamMemberCount": 2,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "Skit",
+              "Fees": 50,
+              "TeamMemberCount": null,
+              "IsChargePerPerson": true
+            }
+          ]
+        },
+        {
+          "Events": [
+            {
+              "Name": "Debate",
+              "Fees": 50,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "Extempore",
+              "Fees": 50,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "GD PI",
+              "Fees": 100,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "Pictionary",
+              "Fees": 50,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "Poem",
+              "Fees": 100,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "Quiz"
+            }
+          ],
+          "Name": "SHABD"
+        },
+        {
+          "Name": "TREASURE HUNT",
+          "Events": [
+            {
+              "Name": "Treasure Hunt",
+              "Fees": 200,
+              "TeamMemberCount": 3,
+              "IsChargePerPerson": false
+            }
+          ]
+        }
+      ],
+      "Name": "Athos"
+    },
+    {
+      "SubGategories": [
+        {
+          "Name": "CSE/CE/IT",
+          "Events": [
+            {
+              "Name": "IT Quiz",
+              "Fees": 100,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "Blind Coding",
+              "Fees": 100,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "Web Design",
+              "Fees": 100,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "Debugging",
+              "Fees": 100,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            }
+          ]
+        },
+        {
+          "Name": "MECH",
+          "Events": [
+            {
+              "Name": "Robo Race (Death Race)",
+              "Fees": 100,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "Robo Bowling",
+              "Fees": 100,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "Robo Tug Of War",
+              "Fees": 100,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "Quiz",
+              "Fees": 100,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            }
+          ]
+        },
+        {
+          "Name": "META",
+          "Events": [
+            {
+              "Name": "Metal Trading",
+              "Fees": 100,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "Meta Quest",
+              "Fees": 100,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "Tour The Furnace",
+              "Fees": 100,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            }
+          ]
+        },
+        {
+          "Name": "EC/EEE/EL",
+          "Events": [
+            {
+              "Name": "Circuit Making &amp; Decoding",
+              "Fees": 100,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "Technical Quiz",
+              "Fees": 100,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "Idea Presentation",
+              "Fees": 100,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            }
+          ]
+        },
+        {
+          "Name": "CIVIL",
+          "Events": [
+            {
+              "Name": "Bridge Making",
+              "Fees": 100,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "Basic Concept Of Civil Engineering (Treasure Hunt)",
+              "Fees": 100,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "Quiz",
+              "Fees": 100,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "Poster Presentation",
+              "Fees": 100,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            }
+          ]
+        },
+        {
+          "Name": "AUTOMOBILE",
+          "Events": [
+            {
+              "Name": "Wheelsman",
+              "Fees": 100,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "Cars Skecherz",
+              "Fees": 100,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "Model of Alternative Mass Transportation",
+              "Fees": 100,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            }
+          ]
+        }
+      ],
+      "Name": "Sparks"
+    }
+  ]
+}
