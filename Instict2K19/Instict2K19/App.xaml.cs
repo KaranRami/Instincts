@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Threading.Tasks;
 using Instict2K19.Interface;
 using Xamarin.Forms;
@@ -9,6 +10,18 @@ namespace Instict2K19
 {
     public partial class App : Application
     {
+        static RegistrationDatabase database;
+        public static RegistrationDatabase Database
+        {
+            get
+            {
+                if (database == null)
+                {
+                    database = new RegistrationDatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "RegistrationSQLite.sqlite"));
+                }
+                return database;
+            }
+        }
         public App()
         {
             InitializeComponent();

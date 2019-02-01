@@ -7,38 +7,55 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Command="{Binding ResetCommand}"
                      Order="Primary"
-                     Icon="ic_Cross.png"/>
-        <ToolbarItem Command="{Binding SaveCommand}"
+                     Icon="ic_Reset.png"/>
+        <ToolbarItem Command="{Binding SaveToDatabaseCommand}"
                      Order="Primary"
-                     Icon="ic_Correct.png"/>
+                     Icon="ic_Save.png"/>
         <ToolbarItem Command="{Binding ExportDatabaseCommand}"
                      Order="Secondary"
-                     Text="Export Databse"/>
+                     Text="Export Database"/>
         <ToolbarItem Command="{Binding TotalCollectionCommand}"
                      Order="Secondary"
                      Text="Total Collection"/>
         <ToolbarItem Command="{Binding SupportCommand}"
                      Order="Secondary"
                      Text="Help And Support"/>
+        <ToolbarItem Command="{Binding SignOutCommand}"
+                     Order="Secondary"
+                     Text="Sign Out"/>
         
         
         </ContentPage.ToolbarItems>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Converters:AddRemoveParticioantsVisibilityConverter x:Key="AddRemoveParticioantsVisibility" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+    
     <ScrollView VerticalOptions="FillAndExpand"
                 HorizontalOptions="FillAndExpand"
                 Padding="10">
         <StackLayout HorizontalOptions="FillAndExpand"
                      VerticalOptions="FillAndExpand"
                      Spacing="10">
-            <Label  Text="{Binding ReceiptNo,StringFormat='Receipt No.: {0}'}"
+                    <StackLayout Orientation="Horizontal">
+                        <Label  Text="ReceiptNo"
+                    VerticalOptions="CenterAndExpand"
                     FontSize="Medium"
-                    FontAttributes="Bold"
-                    HorizontalOptions="FillAndExpand"/>
+                    FontAttributes="Bold"/>
+                        <Entry Text="{Binding ReceiptNo}"
+                               HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+            
                 
             <Grid HorizontalOptions="FillAndExpand"
                   ColumnSpacing="20">
                 <Label  Grid.ColumnSpan="2"
                     Text="College Details"
-                    FontSize="Large"
+                        VerticalOptions="CenterAndExpand"
+                    FontSize="Medium"
                     FontAttributes="Bold"
                     HorizontalOptions="FillAndExpand"/>
                 <StackLayout Grid.Row="1"
@@ -51,7 +68,7 @@
                     </StackLayout.GestureRecognizers>
                     <Image >
                         <Image.Source>
-                                <Binding Path="IsOtherCollege">
+                                <Binding Path="IsNonIUCollege">
                                     <Binding.Converter>
                                         <Converters:BoolToObjectConverter x:TypeArguments="ImageSource"
                                                              TrueObject="ic_UnChecked.png"
@@ -74,7 +91,7 @@
                     </StackLayout.GestureRecognizers>
                     <Image >
                         <Image.Source>
-                                <Binding Path="IsOtherCollege">
+                                <Binding Path="IsNonIUCollege">
                                     <Binding.Converter>
                                         <Converters:BoolToObjectConverter x:TypeArguments="ImageSource"
                                                              TrueObject="ic_Checked.png"
@@ -90,11 +107,20 @@
             </Grid>
             
             <Picker 
-                    ItemsSource="{Binding OtherColleges}"
+                    ItemsSource="{Binding Colleges}"
                     SelectedItem="{Binding SelectedCollege}"
                     HorizontalOptions="FillAndExpand"
                     Title="Select College"
-                    IsVisible="{Binding IsOtherCollege}"/>
+                    IsVisible="{Binding IsNonIUCollege}"/>
+            <StackLayout Orientation="Horizontal"
+                         IsVisible="{Binding IsOtherCollege}">
+                        <Label Text="Other"
+                               VerticalOptions="CenterAndExpand"/>
+                        <Entry Placeholder="Enter College Name"
+                               Text="{Binding OtherCollege}"
+                               HorizontalOptions="FillAndExpand"/>
+                               
+            </StackLayout>
             
             <Grid HorizontalOptions="FillAndExpand">
                 <Grid.ColumnDefinitions>
@@ -102,13 +128,15 @@
                 </Grid.ColumnDefinitions>
                 <Label  Grid.ColumnSpan="2"
                     Text="Contact Details"
-                    FontSize="Large"
+                        VerticalOptions="CenterAndExpand"
+                    FontSize="Medium"
                     FontAttributes="Bold"
                     HorizontalOptions="FillAndExpand"/>
                 <Image Grid.Row="1"
                     Source="ic_Call.png"/>
                <Entry Grid.Row="1" Grid.Column="1"
                         Keyboard="Telephone"
+                      MaxLength="10"
                       HorizontalOptions="FillAndExpand"
                       Placeholder="Contact Number"
                       Text="{Binding PrimaryContactNumber}"/>
@@ -116,20 +144,76 @@
                     Source="ic_Call.png"/>
                <Entry Grid.Row="2" Grid.Column="1" 
                       Keyboard="Telephone"
+                      MaxLength="10"
                       HorizontalOptions="FillAndExpand"
                       Placeholder="Alternate Contact Number"
                       Text="{Binding SecondaryContactNumber}"/>
                 <Image Grid.Row="3"
-                    Source="ic_Email.png"/>
+                    Source="ic_Mail.png"/>
                <Entry Grid.Row="3" Grid.Column="1" 
                       Keyboard="Email"
                       HorizontalOptions="FillAndExpand"
                       Placeholder="Email"
                       Text="{Binding EmailAddress}"/>
             </Grid>
+            <Grid HorizontalOptions="FillAndExpand">
+                <Label
+                    Text="Events Details"
+                    FontSize="Medium"
+                            VerticalOptions="CenterAndExpand"
+                    FontAttributes="Bold"
+                    HorizontalOptions="FillAndExpand"/>
+               <Picker Grid.Row="1"
+                      HorizontalOptions="FillAndExpand"
+                       Title="Select Catagory"
+                      ItemsSource="{Binding Categories}"
+                       SelectedItem="{Binding SelectedCategory}"
+                       ItemDisplayBinding="{Binding Name}"/>
+                <Picker Grid.Row="2"
+                      HorizontalOptions="FillAndExpand"
+                       Title="Select Subcategory"
+                      ItemsSource="{Binding SelectedCategory.SubGategories}"
+                        SelectedItem="{Binding SelectedSubGategory}"
+                        ItemDisplayBinding="{Binding Name}"/>
+                <Picker Grid.Row="3"
+                      HorizontalOptions="FillAndExpand"
+                       Title="Select Event"
+                      ItemsSource="{Binding SelectedSubGategory.Events}"
+                        SelectedItem="{Binding SelectedEvent}"
+                        ItemDisplayBinding="{Binding Name}"/>
+            </Grid>
+            
+                <Label
+                    Text="Participant Details"
+                            VerticalOptions="CenterAndExpand"
+                    FontSize="Medium"
+                    FontAttributes="Bold"
+                    HorizontalOptions="FillAndExpand"/>
+                        
+            <StackLayout Orientation="Horizontal"
+                         IsVisible="{Binding IsNumberOfParticipantsUnknown}">
+                <Label Text="Number Of Participants: "
+                       FontSize="Medium"
+                       VerticalOptions="CenterAndExpand"/>
+                <Entry Text="{Binding NumberOfParticipants}"
+                       Keyboard="Numeric"
+                       MaxLength="2"
+                       HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+            <Entry Placeholder="Enter Participant's or Group Name"
+                   Text="{Binding ParticipantName}"/>                                    
             
         </StackLayout>
     </ScrollView>
-    <ContentPage.Content>
+        <StackLayout VerticalOptions="End"
+                     Padding="10"
+                     Orientation="Horizontal">
+                <Label Text="{Binding Fees,StringFormat='Total Fees: {0}'}"
+                       HorizontalOptions="EndAndExpand"
+                       FontSize="Medium"
+                       FontAttributes="Bold"/>
+                </StackLayout>
+     </StackLayout>
+            
     </ContentPage.Content>
 </ContentPage>

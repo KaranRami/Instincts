@@ -11,8 +11,24 @@ namespace Instict2K19
     {
         public NameAndGroupViewModel(ContentPage view) : base(view)
         {
-        }
+            Device.BeginInvokeOnMainThread(async () =>
+            {
+                var Result = await DependencyService.Get<IUserPreferences>().GetUserPreferences();
+                if (Result.response.Success)
+                {
+                    UserName = Result.user.UserName;
+                    GroupName = Result.user.Gruop;
+                }
+                else
+                {
+                    if (Result.response.Error is Exception ex)
+                        await base.View.DisplayAlert(Constants.AppName, ex.Message, "Ok");
+                    else
+                        await base.View.DisplayAlert(Constants.AppName, "Something went wrong.", "Ok");
+                }
 
+            });
+        }
         public ICommand SaveCommand { get { return new Command(async () => await SaveCommandEvent()); } }
 
         private async Task SaveCommandEvent()
@@ -31,7 +47,7 @@ namespace Instict2K19
                     {
                         Constants.UserName = UserName;
                         Constants.GroupName = GroupName;
-                        await base.View.Navigation.PushAsync(new RegistrationPage());
+                        Application.Current.MainPage= new NavigationPage(new RegistrationPage());
                     }
                     else
                     {

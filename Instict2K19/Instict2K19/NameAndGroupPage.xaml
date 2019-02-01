@@ -40,7 +40,7 @@
                     HorizontalOptions="FillAndExpand"/>
             <Button Grid.Row="2"
                     Grid.ColumnSpan="2"
-                    Text="Save"
+                    Text="Sign In"
                     Command="{Binding SaveCommand}"/>
             <Label  Grid.Row="3"
                     Grid.ColumnSpan="2"
