@@ -5,11 +5,13 @@ using System.ComponentModel;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Plugin.Permissions;
+using Plugin.Permissions.Abstractions;
 using Xamarin.Forms;
 
 namespace Instict2K19
 {
-    public class BaseViewModel:INotifyPropertyChanged
+    public class BaseViewModel : INotifyPropertyChanged
     {
         public ContentPage View;
         public BaseViewModel(ContentPage view)
@@ -54,7 +56,43 @@ namespace Instict2K19
             CommandInitiated = false;
 
         }
+        public async Task<bool> AskForPermission(Permission permission)
+        {
+            try
+            {
+                var status = await CrossPermissions.Current.CheckPermissionStatusAsync(permission);
+                if (status != PermissionStatus.Granted)
+                {
+                    if (await CrossPermissions.Current.ShouldShowRequestPermissionRationaleAsync(permission))
+                    {
+                        await View.DisplayAlert(permission.ToString(), "Need permission to use "+ permission.ToString(), "OK");
+                    }
 
+                    var results = await CrossPermissions.Current.RequestPermissionsAsync(permission);
+                    //Best practice to always check that the key exists
+                    if (results.ContainsKey(permission))
+                        status = results[permission];
+                }
+
+                if (status == PermissionStatus.Granted)
+                {
+                    return true;
+                }
+                else if (status != PermissionStatus.Unknown)
+                {
+                    return false;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                return false;
+            }
+        }
         #region Property
         private bool commandInitiated;
         public bool CommandInitiated
@@ -64,10 +102,9 @@ namespace Instict2K19
         }
         #endregion
         public ICommand SupportCommand { get { return new Command(async () => await SupportCommandEvent()); } }
-
         private async Task SupportCommandEvent()
         {
-            await View.DisplayAlert("Support", "Call: +91 9428949697", "Ok");
+            await View.DisplayAlert("Support", "Call: +91 9726642480", "Ok");
         }
     }
 }

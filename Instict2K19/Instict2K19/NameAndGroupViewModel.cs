@@ -39,14 +39,14 @@ namespace Instict2K19
                 {
                     UserPreferences preferences = new UserPreferences()
                     {
-                        Gruop = GroupName,
-                        UserName = UserName,
+                        Gruop = GroupName.ToUpper(),
+                        UserName = UserName.ToUpper(),
                     };
                     var SaveResult = await DependencyService.Get<IUserPreferences>().SaveUserPreferences(preferences);
                     if(SaveResult.Success)
                     {
-                        Constants.UserName = UserName;
-                        Constants.GroupName = GroupName;
+                        Constants.UserName = UserName.ToUpper();
+                        Constants.GroupName = GroupName.ToUpper();
                         Application.Current.MainPage= new NavigationPage(new RegistrationPage());
                     }
                     else
@@ -86,7 +86,7 @@ namespace Instict2K19
             get { return groupName; }
             set
             {
-                groupName = string.IsNullOrEmpty(value)?value:value.ToUpper();
+                groupName = value;
                 RaisePropertyChanged(() => GroupName);
             }
         }
@@ -97,7 +97,7 @@ namespace Instict2K19
             get { return userName; }
             set
             {
-                userName = string.IsNullOrEmpty(value) ? value : value.ToUpper();
+                userName = value;
                 RaisePropertyChanged(() => UserName);
             }
         }
