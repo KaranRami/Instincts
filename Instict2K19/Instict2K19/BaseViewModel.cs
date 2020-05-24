@@ -50,7 +50,7 @@ namespace Instict2K19
             }
             catch (Exception ex)
             {
-
+                await View.DisplayAlert("Error:",ex.Message.ToString(),"OK");
             }
 
             CommandInitiated = false;
@@ -89,7 +89,7 @@ namespace Instict2K19
             }
             catch (Exception ex)
             {
-
+                await View.DisplayAlert("Error:", ex.Message.ToString(), "OK");
                 return false;
             }
         }

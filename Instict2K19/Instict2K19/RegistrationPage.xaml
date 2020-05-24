@@ -189,8 +189,7 @@
                     FontAttributes="Bold"
                     HorizontalOptions="FillAndExpand"/>
 
-                    <StackLayout Orientation="Horizontal"
-                         IsVisible="{Binding IsNumberOfParticipantsUnknown}">
+                    <StackLayout Orientation="Horizontal">
                         <Label Text="Number Of Participants: "
                        FontSize="Medium"
                        VerticalOptions="CenterAndExpand"/>

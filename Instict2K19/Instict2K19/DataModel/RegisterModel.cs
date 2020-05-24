@@ -16,7 +16,7 @@ namespace Instict2K19.DataModel
         public string SubCategory { get; set; }
         public string EventName { get; set; }
         public double FeesCharged { get; set; }
-        public int? NumberOfParticipipants { get; set; }
+        public int? NumberOfParticipants { get; set; }
         public string RegisteredBy { get; set; }
         public string RegisteredByGroup { get; set; }
         public string RegistrationDate { get; set; }

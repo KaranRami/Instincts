@@ -161,23 +161,12 @@ namespace Instict2K19
                 _subcategory = SelectedSubGategory.Name;
                 _event = SelectedEvent.Name;
             }
-            int? _numberofparticipants = null;
-            if (SelectedEvent.TeamMemberCount == null)
+            if (NumberOfParticipants == 0)
             {
-                if (string.IsNullOrEmpty(NumberOfParticipants))
-                {
-                    await base.View.DisplayAlert("Missing Detail", "Enter member strength of group.", "Ok");
-                    return false;
-                }
-                else
-                {
-                    _numberofparticipants = int.Parse(NumberOfParticipants);
-                }
+                await base.View.DisplayAlert("Missing Detail", "Enter member strength of group.", "Ok");
+                return false;
             }
-            else
-            {
-                _numberofparticipants = SelectedEvent.TeamMemberCount;
-            }
+
             string _participantName = string.Empty;
             if (string.IsNullOrEmpty(ParticipantName))
             {
@@ -231,7 +220,7 @@ namespace Instict2K19
             sb.Append("\n");
             sb.Append(ParticipantName);
             sb.Append("\n");
-            if(!string.IsNullOrEmpty(PUBGID))
+            if (!string.IsNullOrEmpty(PUBGID))
             {
                 sb.Append("\n");
                 sb.Append("PUBG ID: " + PUBGID.ToString());
@@ -246,20 +235,6 @@ namespace Instict2K19
                 return false;
         }
 
-        private void ManageParticipant()
-        {
-            if (SelectedEvent != null && SelectedEvent.TeamMemberCount == null)
-            {
-                IsNumberOfParticipantsUnknown = true;
-            }
-            else
-            {
-                IsNumberOfParticipantsUnknown = false;
-                if (SelectedEvent != null && !SelectedEvent.IsChargePerPerson)
-                    Fees = SelectedEvent.Fees;
-            }
-
-        }
         private void SaveDataToDownloadFolder(string downloadPath, string csv)
         {
             if (File.Exists(downloadPath))
@@ -313,9 +288,10 @@ namespace Instict2K19
                     SubCategory = SelectedSubGategory.Name.ToUpper(),
                     EventName = SelectedEvent.Name.ToUpper(),
                     ParticipantName = ParticipantName.ToUpper(),
+                    NumberOfParticipants = NumberOfParticipants,
                     FeesCharged = Fees,
                     RegistrationDate = DateTime.Now.Date.ToString("MM/dd/yyyy"),
-                    PUBGID= PUBGID,
+                    PUBGID = PUBGID,
                 };
                 string _collegeName = string.Empty;
                 if (IsNonIUCollege)
@@ -329,7 +305,6 @@ namespace Instict2K19
                 {
                     _collegeName = "INDUS UNIVERSITY";
                 }
-                int? _numberOfParticipabts = SelectedEvent.TeamMemberCount == null ? int.Parse(NumberOfParticipants) : SelectedEvent.TeamMemberCount;
                 if (IsNonIUCollege)
                 {
                     if (IsOtherCollege)
@@ -342,7 +317,7 @@ namespace Instict2K19
                     _collegeName = "INDUS UNIVERSITY";
                 }
                 registerModel.CollgeName = _collegeName;
-                registerModel.NumberOfParticipipants = _numberOfParticipabts;
+
 
                 try
                 {
@@ -376,6 +351,7 @@ namespace Instict2K19
             ParticipantName = string.Empty;
             Fees = 0;
             PUBGID = string.Empty;
+            NumberOfParticipants = 0;
         }
 
         public ICommand ExportDatabaseCommand { get { return new Command(async () => await ExportDatabaseCommandEvent()); } }
@@ -539,13 +515,8 @@ namespace Instict2K19
             get { return selectedEvent; }
             set
             {
-                bool isChanged = false;
-                if (value != selectedEvent)
-                    isChanged = true;
                 selectedEvent = value;
                 RaisePropertyChanged(() => SelectedEvent);
-                if (isChanged)
-                    ManageParticipant();
             }
         }
 
@@ -595,30 +566,35 @@ namespace Instict2K19
                 RaisePropertyChanged(() => IsOtherCollege);
             }
         }
-        private bool isNumberOfParticipantsUnknown = false;
-        public bool IsNumberOfParticipantsUnknown
-        {
-            get { return isNumberOfParticipantsUnknown; }
-            set
-            {
-                isNumberOfParticipantsUnknown = value;
-                RaisePropertyChanged(() => IsNumberOfParticipantsUnknown);
-            }
-        }
-        private string numberOfParticipants;
-        public string NumberOfParticipants
+        private int numberOfParticipants = 0;
+        public int NumberOfParticipants
         {
             get { return numberOfParticipants; }
             set
             {
                 numberOfParticipants = value;
                 RaisePropertyChanged(() => NumberOfParticipants);
-                if (!string.IsNullOrEmpty(NumberOfParticipants))
+                if (NumberOfParticipants > 0)
                 {
-                    if (SelectedEvent.IsChargePerPerson)
-                        Fees = SelectedEvent.Fees * double.Parse(NumberOfParticipants);
+                    if(IsNonIUCollege)
+                    {
+                        if (SelectedEvent.IsChargePerPerson)
+                            Fees = SelectedEvent.Fees * NumberOfParticipants;
+                        else
+                            Fees = SelectedEvent.Fees;
+                    }
                     else
-                        Fees = SelectedEvent.Fees;
+                    {
+                        if (SelectedSubGategory != null && PaidCategory.Contains(SelectedSubGategory.Name))
+                        {
+                            if (SelectedEvent.IsChargePerPerson)
+                                Fees = SelectedEvent.Fees * NumberOfParticipants;
+                            else
+                                Fees = SelectedEvent.Fees;
+                        }
+                        else
+                            Fees = 0;
+                    }
                 }
             }
         }
@@ -674,6 +650,9 @@ namespace Instict2K19
                 RaisePropertyChanged(() => EmailAddress);
             }
         }
-
+        List<string> PaidCategory = new List<string>
+        {
+            "GAME UP","MYSTERY MANIA","Start-Up"
+        };
     }
 }

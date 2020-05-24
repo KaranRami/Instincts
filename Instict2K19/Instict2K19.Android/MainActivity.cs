@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Instict2K19.Droid
 {
-    [Activity(Label = "Instict2K19", Icon = "@mipmap/icon", Theme = "@style/MainTheme")]
+    [Activity(Label = "Instict2K20", Icon = "@mipmap/icon", Theme = "@style/MainTheme")]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)

@@ -1,0 +1,392 @@
+{
+  "Categories": [
+    {
+      "SubGategories": [
+        {
+          "Name": "AAKAR",
+          "Events": [
+            {
+              "Name": "Shutter UP",
+              "Fees": 50,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "Rangoli Making",
+              "Fees": 100,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "Rubik's Cube",
+              "Fees": 100,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "Best out of Waste",
+              "Fees": 100,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "Master Chef",
+              "Fees": 100,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "TIK TOK",
+              "Fees": 50,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            }
+          ]
+        },
+        {
+          "Name": "GAME UP",
+          "Events": [
+            {
+              "Name": "CS GO",
+              "Fees": 250,
+              "TeamMemberCount": 4,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "Fifa 18",
+              "Fees": 100,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "NFS Most Wanted",
+              "Fees": 100,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "PUBG(SOLO)",
+              "Fees": 50,
+              "TeamMemberCount": 4,
+              "IsChargePerPerson": false
+            },
+			{
+              "Name": "PUBG(SQUAD)",
+              "Fees": 200,
+              "TeamMemberCount": 4,
+              "IsChargePerPerson": false
+            },
+			{
+              "Name": "Clash Royale",
+              "Fees": 50,
+              "TeamMemberCount": 4,
+              "IsChargePerPerson": false
+            }
+          ]
+        },
+        {
+          "Name": "RHAPSODY",
+          "Events": [
+            {
+              "Name": "Beat Breakers",
+              "Fees": 100,
+              "TeamMemberCount": null,
+              "IsChargePerPerson": true
+            },
+            {
+              "Name": "Symphony",
+              "Fees": 100,
+              "TeamMemberCount": null,
+              "IsChargePerPerson": true
+            },
+            {
+              "Name": "Rock of the Ages",
+              "Fees": 500,
+              "TeamMemberCount": null,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "In Vogue",
+              "Fees": 100,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            }
+          ]
+        },
+        {
+          "Events": [
+            {
+              "Name": "Debate",
+              "Fees": 50,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "GD-PI",
+              "Fees": 100,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "Game of Shows",
+              "Fees": 150,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "Turn Coat",
+              "Fees": 50,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "Youth Parliament",
+              "Fees": 50,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "Court Room",
+              "Fees": 50,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            }
+          ],
+          "Name": "SHABD"
+        },
+        {
+          "Name": "MYSTERY MANIA",
+          "Events": [
+            {
+              "Name": "Treasure Hunt",
+              "Fees": 250,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+			 {
+              "Name": "Beg Borrow Steal",
+              "Fees": 50,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            }
+          ]
+        },
+		{
+          "Name": "ABHIVYAKTI",
+          "Events": [
+            {
+              "Name": "Ad-Selfie",
+              "Fees": 50,
+              "TeamMemberCount": 3,
+              "IsChargePerPerson": false
+            },
+			 {
+              "Name": "Brand Race",
+              "Fees": 100,
+              "TeamMemberCount": 3,
+              "IsChargePerPerson": false
+            },
+			{
+              "Name": "Shipwreck",
+              "Fees": 50,
+              "TeamMemberCount": 3,
+              "IsChargePerPerson": false
+            },
+			{
+              "Name": "International Affairs 101",
+              "Fees": 50,
+              "TeamMemberCount": 3,
+              "IsChargePerPerson": false
+            },
+			{
+              "Name": "Just a Minute",
+              "Fees": 50,
+              "TeamMemberCount": 3,
+              "IsChargePerPerson": false
+            }
+          ]
+        }
+      ],
+      "Name": "Aethos"
+    },
+    {
+      "SubGategories": [
+        {
+          "Name": "CSE/CE/IT",
+          "Events": [
+            {
+              "Name": "Code-o-thon",
+              "Fees": 100,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "Blind Coding",
+              "Fees": 100,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "Web Designing",
+              "Fees": 100,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "Code Relay",
+              "Fees": 150,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            }
+          ]
+        },
+        {
+          "Name": "MECH",
+          "Events": [
+            {
+              "Name": "Death Race",
+              "Fees": 200,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "Robo Soccer",
+              "Fees": 200,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "Angry Shot",
+              "Fees": 200,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "Power Piston ( Workshop )",
+              "Fees": 200,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            }
+          ]
+        },
+        {
+          "Name": "META",
+          "Events": [
+            {
+              "Name": "Metal Trading",
+              "Fees": 100,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "On the Etch",
+              "Fees": 100,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "How it is made",
+              "Fees": 50,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+			{
+              "Name": "Steel Challenge",
+              "Fees": 150,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            }
+          ]
+        },
+        {
+          "Name": "EC/EEE/EL",
+          "Events": [
+            {
+              "Name": "Renaissance",
+              "Fees": 100,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "Electro-hunt",
+              "Fees": 200,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "Electro-Vision",
+              "Fees": 100,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+			{
+              "Name": "Robotics",
+              "Fees": 150,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            }
+          ]
+        },
+        {
+          "Name": "CIVIL",
+          "Events": [
+            {
+              "Name": "Aircraft hangar",
+              "Fees": 150,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "Planefy",
+              "Fees": 100,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "Buzz up",
+              "Fees": 100,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "Natural Filter",
+              "Fees": 100,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            }
+          ]
+        },
+        {
+          "Name": "AUTOMOBILE",
+          "Events": [
+            {
+              "Name": "Wheelman",
+              "Fees": 100,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "Tool time",
+              "Fees": 100,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+            {
+              "Name": "Sketching battle",
+              "Fees": 100,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            },
+			{
+              "Name": "Tech taboo",
+              "Fees": 200,
+              "TeamMemberCount": 1,
+              "IsChargePerPerson": false
+            }
+          ]
+        }
+      ],
+      "Name": "Sparx"
+    }
+  ]
+}
